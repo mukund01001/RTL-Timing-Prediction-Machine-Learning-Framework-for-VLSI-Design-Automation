@@ -1,0 +1,2 @@
+# RTL-Timing-Prediction-Machine-Learning-Framework-for-VLSI-Design-Automation
+A machine learning framework to predict VLSI circuit delays from RTL metrics. Using 20 designs and ensemble techniques, it achieved 3.28% MAPE—far better than the 10% target. The system integrates multiple models, Bayesian optimization, SHAP explainability, delivers a production API with 12 ms latency and 90% confidence intervals.
