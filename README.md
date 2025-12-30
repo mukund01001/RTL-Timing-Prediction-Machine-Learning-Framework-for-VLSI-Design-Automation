@@ -1,4 +1,4 @@
-# Problem 6: Explainable ML Framework for RTL Timing Prediction
+#ML Framework for RTL Timing Prediction
 
 ## Overview
 Machine learning framework for predicting RTL circuit timing with SHAP/LIME explainability.
@@ -33,3 +33,4 @@ Machine learning framework for predicting RTL circuit timing with SHAP/LIME expl
 - **ML:** scikit-learn, XGBoost
 - **Explainability:** SHAP, LIME
 - **Visualization:** Matplotlib, Seaborn
+
