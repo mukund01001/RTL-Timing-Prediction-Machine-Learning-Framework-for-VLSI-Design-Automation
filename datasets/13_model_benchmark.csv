@@ -1,0 +1,7 @@
+Model,MAE (ns),RMSE (ns),R² Score,MAPE (%),Max Error (ns),Median Error (ns),Status
+Baseline RF,0.3048,0.4383,0.8337,0.05,0.8460,0.1527,✅ Best
+Baseline GB,0.4395,0.6769,0.6032,0.08,1.2665,0.2438,✓ Good
+XGBoost,0.1883,0.2451,0.9480,0.03,0.4388,0.1485,✅ Best
+Stacking,0.1676,0.2777,0.9332,0.03,0.5494,0.0569,✅ Best
+Voting,0.3361,0.3746,0.8785,0.06,0.6055,0.2920,✓ Good
+Optimized GB,0.6764,0.7830,0.4691,0.13,0.9591,0.8733,✓ Good
