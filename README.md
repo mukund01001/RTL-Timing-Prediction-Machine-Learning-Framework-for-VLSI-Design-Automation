@@ -2,7 +2,7 @@
 
 ![VLSI](https://img.shields.io/badge/Domain-VLSI%20Design-blue?style=flat-square)
 ![ML](https://img.shields.io/badge/ML-Ensemble%20Methods-green?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Hackathon%20Winner-brightgreen?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Hackathon%20Top-5-out-of-1386-students-brightgreen?style=flat-square)
 ![Python](https://img.shields.io/badge/Language-Python%203.10-blue?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
