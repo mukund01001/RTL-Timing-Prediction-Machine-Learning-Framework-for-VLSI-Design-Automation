@@ -6,11 +6,11 @@
 ![Python](https://img.shields.io/badge/Language-Python%203.10-blue?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-## 🎯 Project Overview
+## Project Overview
 
 A production-grade **machine learning framework** for predicting VLSI circuit critical path delay from Register Transfer Level (RTL) metrics. This project achieved **3.28% MAPE (Mean Absolute Percentage Error)**, exceeding the 10% hackathon target by **3.3x**.
 
-### 🏆 Hackathon Challenge: VLSI FOR ALL
+### Hackathon Challenge: VLSI FOR ALL
 - **Target Accuracy**: <10% MAPE
 - **Our Achievement**: 3.28% MAPE ✅
 - **Target Explainability**: Yes
@@ -20,7 +20,7 @@ A production-grade **machine learning framework** for predicting VLSI circuit cr
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 1. [Quick Start](#quick-start)
 2. [Problem Statement](#problem-statement)
@@ -37,7 +37,7 @@ A production-grade **machine learning framework** for predicting VLSI circuit cr
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 ```bash
@@ -75,16 +75,16 @@ Open in Google Colab: [![Open In Colab](https://colab.research.google.com/assets
 
 ---
 
-## 🔬 Problem Statement
+## Problem Statement
 
 ### The Challenge
 Modern VLSI design flows require timing analysis at multiple stages:
 - **Traditional STA (Static Timing Analysis)** requires complete gate-level netlists (time-consuming)
 - **Early RTL-level timing prediction** enables:
-  - ✅ Accelerated design space exploration
-  - ✅ Rapid architectural decisions
-  - ✅ Reduced synthesis iterations
-  - ✅ Automated design optimization workflows
+  - Accelerated design space exploration
+  - Rapid architectural decisions
+  - Reduced synthesis iterations
+  - Automated design optimization workflows
 
 ### Why ML?
 ML models can predict timing **before synthesis** from just RTL metrics:
@@ -95,7 +95,7 @@ ML models can predict timing **before synthesis** from just RTL metrics:
 
 ---
 
-## 📊 Dataset & Methodology
+## Dataset & Methodology
 
 ### RTL Dataset: 20 Diverse Designs
 
@@ -129,7 +129,7 @@ ML models can predict timing **before synthesis** from just RTL metrics:
 
 ### Feature Engineering Pipeline
 
-#### 1️⃣ Polynomial Features (27 features)
+#### 1. Polynomial Features (27 features)
 ```
 xi, xj, xi·xj, xi², xj², xi²·xj, ...
 ```
@@ -137,20 +137,20 @@ xi, xj, xi·xj, xi², xj², xi²·xj, ...
 - Exponential delay scaling with logic depth
 - Multiplicative fanout effects
 
-#### 2️⃣ Log Transformations (6 features)
+#### 2. Log Transformations (6 features)
 ```
 log(xi + ε) for each feature
 ```
 **Reason**: Many RTL metrics exhibit logarithmic relationships with delay
 
-#### 3️⃣ Interaction Terms (7 features)
+#### 3. Interaction Terms (7 features)
 ```
 gates/depth       → gates per logic level
 depth×fanout      → combined depth-fanout effect
 fanout_max/fanout_avg → fanout ratio/imbalance
 ```
 
-#### 4️⃣ Statistical Aggregations (6 features)
+#### 4. Statistical Aggregations (6 features)
 ```
 Normalized features (z-score)
 Fanout coefficient of variation
@@ -160,7 +160,7 @@ Fanout coefficient of variation
 
 ---
 
-## 🤖 Machine Learning Framework
+## Machine Learning Framework
 
 ### Architecture Overview
 
@@ -211,7 +211,7 @@ Fanout coefficient of variation
 
 ### Key Techniques
 
-#### 🔧 Bayesian Hyperparameter Optimization
+#### Bayesian Hyperparameter Optimization
 - **Method**: Tree-structured Parzen Estimator (TPE)
 - **Trials**: 30 optimization iterations
 - **Improvement**: 3.51% → 3.28% MAPE (6% relative gain)
@@ -221,32 +221,32 @@ Fanout coefficient of variation
   - Min samples split: [2, 10]
   - Subsample: [0.5, 1.0]
 
-#### 📚 Ensemble Stacking
+#### Ensemble Stacking
 - **Base Learners**: 5 diverse models (RF, GB, XGB, LGBM, Ridge)
 - **Meta-Learner**: Ridge regression
 - **Cross-validation**: 5-fold
 - **Benefit**: Robustness through diversity
 
-#### 🔀 Multi-Task Learning
+#### Multi-Task Learning
 - **Simultaneous Prediction**: Critical path delay + slack
 - **Slack Prediction R²**: 0.943
 - **Use Case**: Dual-output design tools
 
 ---
 
-## 📈 Results & Performance
+## Results & Performance
 
 ### Test Set Metrics (20% held-out)
 
 ```
 Model: Optimized Gradient Boosting
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-MAPE:                3.28%  ✅ (Target: <10%)
-R² Score:            0.9447 ✅ Excellent fit
+MAPE:                3.28%  (Target: <10%)
+R² Score:            0.9447 Excellent fit
 MAE:                 0.1896 ns
 RMSE:                0.2341 ns
 Prediction Range:    [4.02, 7.01] ns
-90% Confidence:      YES ✅
+90% Confidence:      YES
 ```
 
 ### Prediction vs Actual (Scatter Plot Analysis)
@@ -261,7 +261,7 @@ Prediction Range:    [4.02, 7.01] ns
 
 ---
 
-## 🔍 Explainability Analysis
+## Explainability Analysis
 
 ### SHAP (SHapley Additive exPlanations) Analysis
 
@@ -317,7 +317,7 @@ Removing features and measuring R² degradation:
 
 ---
 
-## 🚢 Production Deployment
+## Production Deployment
 
 ### REST API Architecture
 
@@ -386,15 +386,15 @@ Response:
 ```
 
 ### Deployment Options
-- ✅ Docker container
-- ✅ AWS Lambda (serverless)
-- ✅ Kubernetes pods
-- ✅ On-premises servers
-- ✅ Edge devices (small footprint)
+-  Docker container
+-  AWS Lambda (serverless)
+-  Kubernetes pods
+-  On-premises servers
+-  Edge devices (small footprint)
 
 ---
 
-## 💻 Installation & Usage
+## Installation & Usage
 
 ### 1. Clone Repository
 ```bash
@@ -445,7 +445,7 @@ result = api.predict_delay({'gate_count': 35, ...})
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 RTL-Timing-Prediction-Machine-Learning-Framework-for-VLSI-Design-Automation/
@@ -497,35 +497,35 @@ RTL-Timing-Prediction-Machine-Learning-Framework-for-VLSI-Design-Automation/
 
 ---
 
-## 🎓 Key Findings
+## Key Findings
 
 ### 1. Feature Importance Hierarchy
-✅ Logic depth dominates timing (1.5× more than gate count)
-✅ Raw metrics insufficient → 46 engineered features essential
-✅ Polynomial features capture nonlinear relationships
-✅ Interactions (depth × fanout) are significant
+ Logic depth dominates timing (1.5× more than gate count)
+ Raw metrics insufficient → 46 engineered features essential
+ Polynomial features capture nonlinear relationships
+ Interactions (depth × fanout) are significant
 
 ### 2. Model Architecture
-✅ Ensemble methods outperform single models
-✅ Diversity trumps raw power (5 weak→1 strong)
-✅ Bayesian optimization yields 2-3% improvement
-✅ Stacking achieves near-optimal performance
+ Ensemble methods outperform single models
+ Diversity trumps raw power (5 weak→1 strong)
+ Bayesian optimization yields 2-3% improvement
+ Stacking achieves near-optimal performance
 
 ### 3. Generalization
-✅ Small dataset (20 samples) yet excellent R² (0.9447)
-✅ No distribution shift detected (AUC-ROC = 0.95)
-✅ Confidence intervals properly calibrated (90% → 90% actual)
-✅ Robust to noise testing (20% noise → graceful degradation)
+ Small dataset (20 samples) yet excellent R² (0.9447)
+ No distribution shift detected (AUC-ROC = 0.95)
+ Confidence intervals properly calibrated (90% → 90% actual)
+ Robust to noise testing (20% noise → graceful degradation)
 
 ### 4. Production Readiness
-✅ 12ms latency meets real-time requirements
-✅ 2.4MB model size → deployable on edge devices
-✅ 90% confidence intervals → decision-critical accuracy
-✅ SHAP+LIME transparency → auditable predictions
+ 12ms latency meets real-time requirements
+ 2.4MB model size → deployable on edge devices
+ 90% confidence intervals → decision-critical accuracy
+ SHAP+LIME transparency → auditable predictions
 
 ---
 
-## 🔮 Future Work
+## Future Work
 
 ### Short-term (1-3 months)
 - [ ] Expand dataset: 20 → 100+ diverse designs
@@ -547,7 +547,7 @@ RTL-Timing-Prediction-Machine-Learning-Framework-for-VLSI-Design-Automation/
 
 ---
 
-## 📚 References
+## References
 
 ### Research Papers
 1. **SHAP**: Lundberg, S. M., & Lee, S. I. (2017). "A Unified Approach to Interpreting Model Predictions."
@@ -565,27 +565,27 @@ RTL-Timing-Prediction-Machine-Learning-Framework-for-VLSI-Design-Automation/
 ### Related Hackathons
 - **VLSI FOR ALL Hackathon** - NIT Jamshedpur (Dec 2025)
 - Challenge: RTL-level ML for timing prediction
-- Status: ✅ **WINNER** (3.3× better than target)
+- Status: ✅ **Rank - 5 ** (3.3× better than target)
 
 ---
 
-## 👤 Author
+##  Author
 
 **Mukund Rathi** (2023BEC0051)
 - Department of Electronics & Communication Engineering
 - Indian Institute of Information Technology, Kottayam (IIIT-K)
-- Email: mukund23bec51@iiitk.ac.in
+- Email: mukund23bec51@iiitkottayam.ac.in
 - GitHub: [@mukund01001](https://github.com/mukund01001)
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **VLSI FOR ALL Hackathon** organizers for the challenging problem statement
 - **NIT Jamshedpur & IIIT-K** for institutional support
@@ -593,11 +593,11 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
-## 📞 Contact & Support
+## Contact & Support
 
 - **Issues**: [GitHub Issues](https://github.com/mukund01001/RTL-Timing-Prediction-Machine-Learning-Framework-for-VLSI-Design-Automation/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/mukund01001/RTL-Timing-Prediction-Machine-Learning-Framework-for-VLSI-Design-Automation/discussions)
-- **Email**: mukund23bec51@iiitk.ac.in
+- **Email**: mukund23bec51@iiitkottayam.ac.in
 
 ---
 
