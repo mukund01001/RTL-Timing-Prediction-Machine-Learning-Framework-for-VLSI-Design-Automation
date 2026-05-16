@@ -12,11 +12,11 @@ A production-grade **machine learning framework** for predicting VLSI circuit cr
 
 ### Hackathon Challenge: VLSI FOR ALL
 - **Target Accuracy**: <10% MAPE
-- **Our Achievement**: 3.28% MAPE ✅
+- **Our Achievement**: 3.28% MAPE 
 - **Target Explainability**: Yes
-- **Our Implementation**: SHAP + LIME ✅
+- **Our Implementation**: SHAP + LIME
 - **Production Ready**: Yes
-- **Our Deployment**: REST API with 12ms latency ✅
+- **Our Deployment**: REST API with 12ms latency
 
 ---
 
@@ -269,11 +269,11 @@ Prediction Range:    [4.02, 7.01] ns
 
 | Rank | Feature | Importance | Impact |
 |---|---|---|---|
-| **1** | **Logic Depth** | 1.5× | **PRIMARY DRIVER** 🔴 |
-| **2** | Gate Count | 1.0× | **Secondary** 🟠 |
-| **3** | Net Count | 0.8× | **Tertiary** 🟡 |
-| **4** | Fanout (Max) | 0.6× | **Minor** 🟢 |
-| **5** | Fanout (Avg) | 0.4× | **Minimal** 🔵 |
+| **1** | **Logic Depth** | 1.5× | **PRIMARY DRIVER**  |
+| **2** | Gate Count | 1.0× | **Secondary**  |
+| **3** | Net Count | 0.8× | **Tertiary**  |
+| **4** | Fanout (Max) | 0.6× | **Minor**  |
+| **5** | Fanout (Avg) | 0.4× | **Minimal**  |
 
 #### Key Insight
 > **Logic depth is 1.5× more important than gate count**
@@ -309,11 +309,11 @@ Removing features and measuring R² degradation:
 
 | Feature | R² Degradation | Criticality |
 |---|---|---|
-| Logic Depth | -0.34 | 🔴 CRITICAL |
-| Gate Count | -0.12 | 🟠 Important |
-| Net Count | -0.08 | 🟡 Moderate |
-| Fanout Max | -0.05 | 🟢 Minor |
-| Fanout Avg | -0.02 | 🔵 Minimal |
+| Logic Depth | -0.34 |  CRITICAL |
+| Gate Count | -0.12 |  Important |
+| Net Count | -0.08 |  Moderate |
+| Fanout Max | -0.05 |  Minor |
+| Fanout Avg | -0.02 |  Minimal |
 
 ---
 
